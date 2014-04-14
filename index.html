@@ -1,0 +1,108 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Urlcheck</title>
+  <meta name="description" content="Malicious Web Sites Detection using Suspicious URL">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Urlcheck</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Malicious Web Sites Detection using Suspicious URL</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/guptachirag/URLcheck/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/guptachirag/URLcheck/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/guptachirag/URLcheck" class="code">View Urlcheck on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a name="urlcheck" class="anchor" href="#urlcheck"><span class="octicon octicon-link"></span></a>URLcheck</h1>
+
+<p>Learning based Malicious Web Sites Detection</p>
+
+<p><strong>ABSTRACT</strong></p>
+
+<p>Malicious Web sites largely promote the growth of Internet criminal activities and constrain the development of Web services. As a result, there has been strong motivation to develop systemic solution to stopping the user from visiting such Web sites. </p>
+
+<p>We propose a learning based approach to classifying Web sites into 3 classes: Benign, Spam and Malicious.</p>
+
+<p>Our mechanism only analyzes the Uniform Resource Locator (URL) itself without accessing the content of Web sites. 
+Thus, it eliminates the run-time latency and the possibility of exposing users to the browser based vulnerabilities.
+By employing learning algorithms, our scheme achieves better performance on generality and coverage compared with blacklisting service. </p>
+
+<h2>
+<a name="project-approach" class="anchor" href="#project-approach"><span class="octicon octicon-link"></span></a>PROJECT APPROACH</h2>
+
+<p>URLs of the websites are separated into 3 classes:</p>
+
+<ul>
+<li>Benign: Safe websites with normal services</li>
+<li>Spam: Website performs the act of attempting to flood the user with advertising or sites such as fake surveys and online dating etc.</li>
+<li>Malware: Website created by attackers to disrupt computer operation, gather sensitive information, or gain access to private computer systems.</li>
+</ul><h3>
+<a name="feature-extraction" class="anchor" href="#feature-extraction"><span class="octicon octicon-link"></span></a>Feature Extraction</h3>
+
+<p>Given single URL, we extract its features and  categorize them into 3 classes:</p>
+
+<p><strong>1. Lexical Features</strong></p>
+
+<p>Lexical features are based on the observation that the URLs of many illegal sites look different, compared with legitimate sites. Analyzing lexical features enables us to capture the property for classification purposes. We first distinguish the two parts of a URL: the host name and the path, from which we extract bag-of-words (strings delimited by ‘/’,  ‘?’, ‘.’, ‘=’,  ‘-’ and  ‘ ’). </p>
+
+<p>We find that phishing   website  prefers  to have  longer  URL,  more  levels (delimited by dot), more tokens in domain  and  path, longer token. Besides, phishing and malware websites could pretend to be a benign  one by  containing popular brand names  as tokens other than those in second-level  domain. Considering phishing  websites and malware websites may use IP address directly so as  to cover  the  suspicious  URL,  which  is very rare in benign case. Also, phishing URLs are found to contain several suggestive word tokens(confirm,  account, banking, secure,  ebayisapi, webscr,  login,  signin), we check the presence of these security sensitive words and include the binary value in our features.</p>
+
+<p><strong>2. Site popularity Features</strong></p>
+
+<p>Intuitively, malicious sites are always less popular than benign ones. For this reason, site popularity can be considered as an important feature. Traffic rank feature is acquired from Alexa.com. </p>
+
+<p><strong>3. Host-based Features</strong></p>
+
+<p>Host-based features are based on the observation that malicious sites are always registered in less reputable hosting centers or regions.</p>
+
+<h3>
+<a name="training" class="anchor" href="#training"><span class="octicon octicon-link"></span></a>Training</h3>
+
+<p>All of URLs in the dataset are labeled. We used two supervised learning algorithms <strong>random forest</strong> and <strong>support vector machine</strong> to train using scikit-learn library.</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/guptachirag" class="avatar"><img src="https://avatars1.githubusercontent.com/u/3479259?s=60" width="48" height="48"/></a> <a href="https://github.com/guptachirag">guptachirag</a> maintains <a href="https://github.com/guptachirag/URLcheck">Urlcheck</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/guptachirag/URLcheck/tarball/master" class="tar">tar</a><a href="https://github.com/guptachirag/URLcheck/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
